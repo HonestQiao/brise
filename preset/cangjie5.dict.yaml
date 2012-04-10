@@ -4,8 +4,16 @@
 
 ---
 name: "cangjie5"
-version: "0.9.5"
+version: "0.9.10"
 sort: original
+use_preset_vocabulary: true
+phrase_encoding_rules:
+  - length: 2
+    formula: "AaAzBaBbBz"
+  - length: 3
+    formula: "AaAzBaBzCz"
+  - length: [4, 10]
+    formula: "AaBzCaYzZz"
 ...
 
 日	a
