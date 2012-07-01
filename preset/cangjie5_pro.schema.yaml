@@ -3,8 +3,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: cangjie5
-  name: 倉頡五代
+  schema_id: cangjie5_pro
+  name: 倉頡五代・世紀版
   version: "0.12.2"
   author:
     - 發明人 朱邦復先生
@@ -38,27 +38,24 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - reverse_lookup_translator
     - table_translator
+    - reverse_lookup_translator
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " ;'"
-  #max_code_length: 5
+  max_code_length: 5
   algebra:
-    - erase/\[[A-D]\]$/  # 禁用大字符集 CJKV Ext-A/B/C/D
+    - xform/^(.+)\[[A-D]\]$/$1/  # 啓用大字符集 CJKV Ext-A/B/C/D
 
 translator:
   dictionary: cangjie5
+  prism: cangjie5_pro
   preedit_format:
     - "xlit|abcdefghijklmnopqrstuvwxyz;'|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符・・|"
   comment_format:
     - xform/\[([A-D])\]$/〔擴展$1〕/
     - "xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符～|"
-
-abc_segmentor:
-  extra_tags:
-    - reverse_lookup
 
 reverse_lookup:
   dictionary: luna_pinyin
