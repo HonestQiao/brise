@@ -4,8 +4,8 @@
 
 schema:
   schema_id: cangjie5_pro
-  name: 倉頡五代・世紀版
-  version: "0.12.2"
+  name: 倉頡五代・全字集
+  version: "0.12.5"
   author:
     - 發明人 朱邦復先生
   description: |
@@ -46,7 +46,7 @@ speller:
   delimiter: " ;'"
   max_code_length: 5
   algebra:
-    - xform/^(.+)\[[A-D]\]$/$1/  # 啓用大字符集 CJKV Ext-A/B/C/D
+    - xlit|ABCDEFGHIJKLMNOPQRSTUVWXYZ|abcdefghijklmnopqrstuvwxyz|
 
 translator:
   dictionary: cangjie5
@@ -54,7 +54,7 @@ translator:
   preedit_format:
     - "xlit|abcdefghijklmnopqrstuvwxyz;'|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符・・|"
   comment_format:
-    - xform/\[([A-D])\]$/〔擴展$1〕/
+    - xlit|ABCDEFGHIJKLMNOPQRSTUVWXYZ|abcdefghijklmnopqrstuvwxyz|
     - "xlit|abcdefghijklmnopqrstuvwxyz~|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符～|"
 
 reverse_lookup:
@@ -64,7 +64,7 @@ reverse_lookup:
   preedit_format:
     - xform/([nljqxy])v/$1ü/
   comment_format:
-    - xform/\[([A-D])\]$/〔擴展$1〕/
+    - xlit|ABCDEFGHIJKLMNOPQRSTUVWXYZ|abcdefghijklmnopqrstuvwxyz|
     - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
 
 punctuator:
