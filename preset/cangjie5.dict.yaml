@@ -29,11 +29,11 @@ encoding_exclude_patterns:
   - '^x.*$'
   - '^z.*$'
 encoding_rules:
-  - length: 2
+  - length_equal: 2
     formula: "AaAzBaBbBz"
-  - length: 3
+  - length_equal: 3
     formula: "AaAzBaBzCz"
-  - length: [4, 10]
+  - length_in_range: [4, 10]
     formula: "AaBzCaYzZz"
 ...
 
